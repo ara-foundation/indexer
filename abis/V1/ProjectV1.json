@@ -1,0 +1,469 @@
+[
+  {
+    "inputs": [],
+    "name": "InvalidInitialization",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotInitializing",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableInvalidOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "account",
+        "type": "address"
+      }
+    ],
+    "name": "OwnableUnauthorizedAccount",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint64",
+        "name": "version",
+        "type": "uint64"
+      }
+    ],
+    "name": "Initialized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "projectId",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "logos",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "aurora",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "techStack",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "costUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "duration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "sourceCodeUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "testUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startTime",
+            "type": "uint256"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct SharedV1.Project",
+        "name": "project",
+        "type": "tuple"
+      }
+    ],
+    "name": "NewProject",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "previousOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "OwnershipTransferred",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "uint256",
+        "name": "projectId",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "ownership",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "maintainer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "check",
+            "type": "address"
+          }
+        ],
+        "indexed": false,
+        "internalType": "struct SharedV1.Sangha",
+        "name": "project",
+        "type": "tuple"
+      }
+    ],
+    "name": "SetSangha",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastProjectId",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "maydone",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "active",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "logos",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "aurora",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "techStack",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "costUsd",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "duration",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "sourceCodeUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "testUrl",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "startTime",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct SharedV1.Project",
+        "name": "project_",
+        "type": "tuple"
+      }
+    ],
+    "name": "newProject",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "owner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "projects",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "active",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "logos",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "aurora",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "techStack",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "costUsd",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "duration",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "sourceCodeUrl",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "testUrl",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "startTime",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "renounceOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "sanghas",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "ownership",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "maintainer",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "check",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "projectId_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "check_",
+        "type": "address"
+      }
+    ],
+    "name": "setCheck",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "maydone_",
+        "type": "address"
+      }
+    ],
+    "name": "setMaydone",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "projectId_",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "ownership",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "maintainer",
+            "type": "address"
+          },
+          {
+            "internalType": "address",
+            "name": "check",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct SharedV1.Sangha",
+        "name": "sangha_",
+        "type": "tuple"
+      }
+    ],
+    "name": "setSangha",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "transferOwnership",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
