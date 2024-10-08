@@ -11,6 +11,7 @@ networks:
     events:
     - event: NewProject(uint256 indexed projectId, (bool,string,string,string,string,uint256,uint256,string,string,uint256) project)
     - event: SetSangha(uint256 indexed projectId, (address,address,address) project)
+    - event: SetInitialLeader(uint256 indexed projectId, address initialLeader)
   - name: TreasuryV1
     address:
     - 0xD6dffF953AF507C7934F431d7b020d7C253377c3

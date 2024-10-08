@@ -63,6 +63,13 @@ type ProjectV1_SetSangha {
   project_2: String!
 }
 
+type ProjectV1_SetInitialLeader {
+  id: ID!
+  projectId: BigInt!
+  initialLeader: String!
+}
+
+
 type TreasuryV1_CollateralVote {
   id: ID!
   token: String!
