@@ -1,0 +1,105 @@
+type ActV1_CancelTask {
+  id: ID!
+  projectId: BigInt!
+  taskId: BigInt!
+  payload: String!
+}
+
+type ActV1_CompleteTask {
+  id: ID!
+  projectId: BigInt!
+  taskId: BigInt!
+  contributor: String!
+  payload: String!
+}
+
+type ActV1_NewTask {
+  id: ID!
+  projectId: BigInt!
+  taskId: BigInt!
+  checkAmount_: BigInt!
+  payload: String!
+}
+
+type ActV1_SetProject {
+  id: ID!
+  projectId: BigInt!
+}
+
+type CashierV1_Redeem {
+  id: ID!
+  check: String!
+  collateral: String!
+  to: String!
+  usdAmount: BigInt!
+  collateralAmount: BigInt!
+}
+
+type CashierV1_SetProject {
+  id: ID!
+  projectId: BigInt!
+}
+
+type ProjectV1_NewProject {
+  id: ID!
+  projectId: BigInt!
+  project_0: Boolean!
+  project_1: String!
+  project_2: String!
+  project_3: String!
+  project_4: String!
+  project_5: BigInt!
+  project_6: BigInt!
+  project_7: String!
+  project_8: String!
+  project_9: BigInt!
+}
+
+type ProjectV1_SetSangha {
+  id: ID!
+  projectId: BigInt!
+  project_0: String!
+  project_1: String!
+  project_2: String!
+}
+
+type TreasuryV1_CollateralVote {
+  id: ID!
+  token: String!
+  voter: String!
+  agree: Boolean!
+}
+
+type TreasuryV1_CollateralVotingAction {
+  id: ID!
+  token: String!
+  agree: Boolean!
+}
+
+type TreasuryV1_CollateralVotingInit {
+  id: ID!
+  initializer: String!
+  token: String!
+  decimals: BigInt!
+  feed: String!
+  feedDecimals: BigInt!
+}
+
+type TreasuryV1_Mint {
+  id: ID!
+  projectId_: BigInt!
+  ownershipToken: String!
+  ownershipAmount: BigInt!
+  to: String!
+  usdAmount: BigInt!
+  collateral: String!
+  collateralAmount: BigInt!
+}
+
+type TreasuryV1_SetProject {
+  id: ID!
+  projectId: BigInt!
+  tokenAmount: BigInt!
+  usdAmount: BigInt!
+}
+
