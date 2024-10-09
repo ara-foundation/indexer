@@ -13,6 +13,7 @@ import {
   ProjectV1,
   ProjectV1_NewProject,
   ProjectV1_SetSangha,
+  ProjectV1_SetInitialLeader,
   TreasuryV1,
   TreasuryV1_CollateralVote,
   TreasuryV1_CollateralVotingAction,
@@ -142,6 +143,16 @@ ProjectV1.SetSangha.handler(async ({ event, context }) => {
   };
 
   context.ProjectV1_SetSangha.set(entity);
+});
+
+ProjectV1.SetInitialLeader.handler(async ({ event, context }) => {
+  const entity: ProjectV1_SetInitialLeader = {
+    id: `${event.chainId}_${event.block.number}_${event.logIndex}`,
+    projectId: event.params.projectId,
+    initialLeader: event.params.initialLeader,
+  };
+
+  context.ProjectV1_SetInitialLeader.set(entity);
 });
 
 TreasuryV1.CollateralVote.handler(async ({ event, context }) => {
