@@ -1,20 +1,13 @@
 # yaml-language-server: $schema=./node_modules/envio/evm.schema.json
 name: envio-indexer
-networks:
-- id: 97
-  start_block: 44528820
-  contracts:
+contracts:
   - name: ProjectV1
-    address:
-    - 0x88be435E8a4cad3cE6E7ABE3468199F03b97B9B3
     handler: src/EventHandlers.ts
     events:
     - event: NewProject(uint256 indexed projectId, (bool,string,string,string,string,uint256,uint256,string,string,uint256) project)
     - event: SetSangha(uint256 indexed projectId, (address,address,address) project)
     - event: SetInitialLeader(uint256 indexed projectId, address initialLeader)
   - name: TreasuryV1
-    address:
-    - 0xD6dffF953AF507C7934F431d7b020d7C253377c3
     handler: src/EventHandlers.ts
     events:
     - event: CollateralVote(address indexed token, address voter, bool agree)
@@ -23,19 +16,46 @@ networks:
     - event: Mint(uint256 indexed projectId_, address ownershipToken, uint256 ownershipAmount, address to, uint256 usdAmount, address collateral, uint256 collateralAmount)
     - event: SetProject(uint256 indexed projectId, uint256 tokenAmount, uint256 usdAmount)
   - name: CashierV1
-    address:
-    - 0x51AED4dC4F45125Db25B5D7FF141D528e8A853B3
     handler: src/EventHandlers.ts
     events:
     - event: Redeem(address indexed check, address indexed collateral, address to, uint256 usdAmount, uint256 collateralAmount)
     - event: SetProject(uint256 indexed projectId)
   - name: ActV1
-    address:
-    - 0x959f18544660b8D144D82028faF04d0AD95E9a85
     handler: src/EventHandlers.ts
     events:
     - event: CancelTask(uint256 indexed projectId, uint256 indexed taskId, string payload)
     - event: CompleteTask(uint256 indexed projectId, uint256 indexed taskId, address contributor, string payload)
     - event: NewTask(uint256 indexed projectId, uint256 indexed taskId, uint256 checkAmount_, string payload)
     - event: SetProject(uint256 indexed projectId)
+networks:
+- id: 97
+  start_block: 44528820
+  contracts:
+  - name: ProjectV1
+    address:
+    - 0x88be435E8a4cad3cE6E7ABE3468199F03b97B9B3
+  - name: TreasuryV1
+    address:
+    - 0xD6dffF953AF507C7934F431d7b020d7C253377c3
+  - name: CashierV1
+    address:
+    - 0x51AED4dC4F45125Db25B5D7FF141D528e8A853B3
+  - name: ActV1
+    address:
+    - 0x959f18544660b8D144D82028faF04d0AD95E9a85
+- id: 137
+  start_block: 62826906
+  contracts:
+  - name: ProjectV1
+    address:
+    - 0x3a93C3A6AF3900b08d01B31c028DA8Aeb7f4CCdA
+  - name: TreasuryV1
+    address:
+    - 0x4a64f4f3536a8486dDb1A72B641AbA6bFa42b952
+  - name: CashierV1
+    address:
+    - 0x727d078F25da927e21af87E7FfAB8abdb6E04413
+  - name: ActV1
+    address:
+    - 0x573ce6cbD55E4d05a3b9A6c46C12E4A66Eb24881
 rollback_on_reorg: false
